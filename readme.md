@@ -1,7 +1,9 @@
 
-# Debiasing Watermarks for Large Language Models via Maximal Coupling
+# Watermark in the Classroom: A Conformal Framework for Adaptive AI Usage Detection
+Yangxinyu Xie, Xuyang Chen, Zhimei Ren, Weijie J. Su
+University of Pennsylvania
 
-This repository reproduces the results reported in [Debiasing Watermarks for Large Language Models via Maximal Coupling](https://arxiv.org/abs/2411.11203). The following content guides you through the process of reproducing the results in the paper using Python.
+This repository reproduces the results reported in [Watermark in the Classroom: A Conformal Framework for Adaptive AI Usage Detection](). The following content guides you through the process of reproducing the results in the paper using Python.
 
 
 # Table of Contents
