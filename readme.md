@@ -1,7 +1,7 @@
 
 # Watermark in the Classroom: A Conformal Framework for Adaptive AI Usage Detection
-Yangxinyu Xie, Xuyang Chen, Zhimei Ren, Weijie J. Su
-University of Pennsylvania
+### Yangxinyu Xie, Xuyang Chen, Zhimei Ren, Weijie J. Su
+### University of Pennsylvania
 
 This repository reproduces the results reported in [Watermark in the Classroom: A Conformal Framework for Adaptive AI Usage Detection](). The following content guides you through the process of reproducing the results in the paper using Python.
 
