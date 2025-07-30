@@ -118,9 +118,57 @@ Here is an example:
 python similarity.py \
         --input_dir data/ \
         --input_filename ETS_corpus_sampled.jsonl \
-        --output_dir results/ETS_corpus_sampled/qwen/openai/temp0.7_ngram4/1 \
+        --output_dir results/ETS_corpus_sampled/qwen/openai/temp0.7_ngram4/1
 ```
 
 3. You can reproduce the results of the paper by running the [`detection_results.py`](./detection_results.py) and use [`Summarize_results.ipynb`](./Summarize_results.ipynb) to visualize the results.
+
+The [`detection_results.py`](./detection_results.py) script runs hypothesis testing via conformal prediction to analyze watermark detection robustness across different scenarios and datasets. This script supports three different experiments:
+
+* `1`: ETS Corpus
+* `2`: LOCNESS Corpus
+* `3`: Weighted combination of ETS and LOCNESS
+
+<details><span style="font-weight: bold;">Command Line Arguments for detection\_results.py</span>
+
+* `--tokenizer`: The tokenizer/model to use. Supported values: `phi`, `qwen`, `llama`.
+* `--method_detect`: Watermark detection method. Supported values: `openai`, `maryland`.
+* `--ngram`: Size of the n-gram context used in watermark detection (default: `4`).
+* `--experiment`: Selects which experiment to run:
+
+  * `1` = ETS only
+  * `2` = LOCNESS only (grouped)
+  * `3` = Weighted mixture of ETS and LOCNESS (default)
+</details>
+
+Here is an example:
+```bash
+python detection_results.py \
+        --tokenizer phi \
+        --method_detect openai \
+        --ngram 4 \
+        --experiment 3
+```
+
+This will evaluate watermark detection robustness on the **weighted ETS + LOCNESS** setup using the **Phi tokenizer**, **OpenAI watermarking method**, and **n-gram size of 4**.
+
+#### Output
+
+The script will produce CSV result files under the `results/` directory based on the selected experiment:
+
+* `results/ETS_conformal_phi_openai.csv` — for ETS-only experiment (`--experiment 1`)
+* `results/LOCNESS_conformal_phi_openai.csv` — for LOCNESS-only (`--experiment 2`)
+* `results/ETS_conformal_weighted_phi_openai.csv` — for weighted testing (`--experiment 3`)
+
+Each output file contains statistics such as:
+
+* False positive rate
+* Power
+* Number of outliers
+* Total samples
+* Prompt identifiers
+* Experimental configuration (e.g., base and alternative prompt IDs, seed, method)
+
+These results can be visualized and further summarized using [`Summarize_results.ipynb`](./Summarize_results.ipynb).
 
 4. To reproduce the visuals in the introduction of the paper and to produce an example of the three classroom settings, you can run [`detection.ipynb`](./detection.ipynb).
