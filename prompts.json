@@ -1,0 +1,31 @@
+{
+    "1": {
+      "template": "Correct only spelling and grammatical errors in the following essay.\nDo not change wording, phrasing, punctuation (unless part of a grammar fix) or style.\nProvide only the final essay.\n\n{human_response}",
+      "truncate": false
+    },
+    "2": {
+      "template": "Correct grammar, spelling, and any awkward sentence constructions in the following essay. Keep the original voice and tone. Do not rewrite for clarity unless absolutely necessary.\nProvide only the final essay.\n\n{human_response}",
+      "truncate": false
+    },
+    "3": {
+      "template": "Please revise the following essay to improve sentence transitions and flow. Do not add new content or examples—only improve how existing ideas are connected and expressed. Provide only the final essay.\n\n{human_response}",
+      "truncate": false
+    },
+    "4": {
+      "template": "Revise the following essay to enhance readability and clarity, while keeping the original wording as intact as possible.\nProvide only the final essay.\n\n{human_response}",
+      "truncate": false
+    },
+    "5": {
+      "template": "Assess the logical flow of this essay and revise it to improve coherence or address reasoning gaps. Keep the original wording and structure as intact as possible. Provide only the final essay.\n\n{human_response}",
+      "truncate": false
+    },
+    "6": {
+      "template": "Improve clarity in the following essay by reordering or rephrasing within paragraphs only. Do not cut or add content. Keep the original sentences where possible.\nProvide only the final essay.\n\n{human_response}",
+      "truncate": false
+    },
+    "7": {
+      "truncate": true,
+      "template_with_topic": "Help me write an essay in 300 words responding to the following prompt:\n{topic}\n\nHere is the text I have written so far as a starting point:\n{human_response}\n\nPlease build upon my ideas, keeping the original tone, style, and viewpoint. Provide only the final essay.",
+      "template": "Expand on the essay below to complete it. Provide only the final essay.\n\n{human_response}"
+    },
+  }

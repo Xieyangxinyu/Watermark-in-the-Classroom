@@ -1,0 +1,16 @@
+torch
+transformers
+flash_attn
+accelerate
+pandas
+scipy
+peft==0.4.0
+nltk
+
+
+matplotlib
+pandas
+scikit-learn
+scipy
+statsmodels
+tqdm
