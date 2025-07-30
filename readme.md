@@ -31,14 +31,14 @@ We use two instruction fine-tuned models: [microsoft/Phi-4-mini-instruct](https:
 ## Data
 Due to the liscensing restrictions, we cannot provide the original data files in this repository, part of which are also included in our partial results. The original data and the processing scripts are available in the [data](data\readme.md) folder. The processed data is stored in JSONL format, which is a common format for storing structured data.
 
-Specifically, we omitted `results.jsonl` under the `results` folder, which contains the generated watermarked text for each prompt in JSONL format. You can generate this file by running the `[polish.py](./polish.py)` script below with the appropriate command-line arguments.
+Specifically, we omitted `results.jsonl` under the `results` folder, which contains the generated watermarked text for each prompt in JSONL format. You can generate this file by running the [`polish.py`](./polish.py) script below with the appropriate command-line arguments.
 
 ## Usage
 You can reproduce the results of the paper by the following steps:
-1. Run the `[polish.py](./polish.py)` file with the appropriate command-line arguments.
+1. Run the [`polish.py`](./polish.py) file with the appropriate command-line arguments.
 <details>
-<summary><span style="font-weight: bold;">Command Line Arguments for poish.py</span></summary>
-    
+<summary><span style="font-weight: bold;">Command Line Arguments for polish.py</span></summary>
+
 - `--model_name`: The name of the pre-trained model to use for text generation and analysis. Supported model names include "phi" and "qwen".
 - `--prompt_path`: The path to the JSON file containing prompts. This file should contain a list of prompts in JSONL format. You can choose from `data/ETS_corpus_sampled.jsonl`, or `data/LOCNESS_sampled.jsonl`.
 - `--improve_id`: The ID of the prompt to improve. This is used to select a specific prompt from the [`prompts.json`](/prompts.json) file. The range of `improve_id` is from 1 to 7. 
@@ -65,7 +65,7 @@ python polish.py \
 
 This script will produce `results.jsonl` in the specified output directory, which contains the generated watermarked text (AI-edited essays) for each prompt in JSONL format. 
 
-2. Run the `[get_scores.py](./get_scores.py)` file to analyze the generated watermarked text and compute the watermark scores.
+2. Run the [`get_scores.py`](./get_scores.py) file to analyze the generated watermarked text and compute the watermark scores.
 <details>
 <summary><span style="font-weight: bold;">Command Line Arguments for get_scores.py</span></summary>
 
@@ -103,7 +103,7 @@ The script will produce `scores.jsonl` in the specified output directory. In par
 | `score` | Watermark score of the text |
 | `pvalue` | p-value of the detection test |
 
-The `[similarity.py](/similarity.py)` script can be used to compute the similarity between the generated AI-editted text and the original essay. The output will be saved in `similarity.jsonl` in the specified output directory.
+The [`similarity.py`](./similarity.py) script can be used to compute the similarity between the generated AI-editted text and the original essay. The output will be saved in `similarity.jsonl` in the specified output directory.
 <details>
 <summary><span style="font-weight: bold;">Command Line Arguments for similarity.py</span></summary>
 
@@ -121,6 +121,6 @@ python similarity.py \
         --output_dir results/ETS_corpus_sampled/qwen/openai/temp0.7_ngram4/1 \
 ```
 
-3. You can reproduce the results of the paper by running the `[detection_results.py](./detection_results.py)` and use `[Summarize_results.ipynb](./Summarize_results.ipynb)` to visualize the results.
+3. You can reproduce the results of the paper by running the [`detection_results.py`](./detection_results.py) and use [`Summarize_results.ipynb`](./Summarize_results.ipynb) to visualize the results.
 
-4. To reproduce the visuals in the introduction of the paper and to produce an example of the three classroom settings, you can run `[detection.ipynb](./detection.ipynb)`.
+4. To reproduce the visuals in the introduction of the paper and to produce an example of the three classroom settings, you can run [`detection.ipynb`](./detection.ipynb).
