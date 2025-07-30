@@ -18,8 +18,8 @@ data/ETS_corpus.json
 old/
 .DS_Store
 worker*
-data\ETS_corpus_sampled.jsonl
-data\LOCNESS_sampled.jsonl
+data/ETS_corpus_sampled.jsonl
+data/LOCNESS_sampled.jsonl
 config.json
 results.jsonl
 myenv/
