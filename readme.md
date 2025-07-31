@@ -31,7 +31,7 @@ All experiments were run on NVIDIA A100-SXM4 GPUs with 40GB of VRAM on [Polaris 
 We use two instruction fine-tuned models: [microsoft/Phi-4-mini-instruct](https://huggingface.co/microsoft/Phi-4-mini-instruct) and [Qwen/Qwen2.5-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct). In all our codes, `{model_name}` are either `phi` or `qwen`.
 
 ## Data
-Due to the liscensing restrictions, we cannot provide the original data files in this repository, part of which are also included in our partial results. The original data and the processing scripts are available in the [data](data\readme.md) folder. The processed data is stored in JSONL format, which is a common format for storing structured data.
+Due to the liscensing restrictions, we cannot provide the original data files in this repository, part of which are also included in our partial results. The original data and the processing scripts are available in the [data](data/readme.md) folder. The processed data is stored in JSONL format, which is a common format for storing structured data.
 
 Specifically, we omitted `results.jsonl` under the `results` folder, which contains the generated watermarked text for each prompt in JSONL format. You can generate this file by running the [`polish.py`](./polish.py) script below with the appropriate command-line arguments.
 
