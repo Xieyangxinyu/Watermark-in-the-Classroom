@@ -71,10 +71,12 @@ def load_results(
 
 
 def retrieve_scores(path):
+    
     scores_path = os.path.join(path, "scores.jsonl")
     pvals = load_results(scores_path, result_key="pvalue")
     essays_path = os.path.join(path, "results.jsonl")
     if os.path.exists(essays_path):
+        print(f"Loading essays from: {essays_path}")
         essays = load_results(essays_path, result_key="result")
         return pvals, essays
     else:
@@ -153,7 +155,6 @@ def load_dataset(
                     improve_id=improve_id,
                     method=method,
                 )
-
                 # Get and essays
                 pvals, essays = retrieve_scores(scores_dir)
                 cols[f"{id_str}_pval"] = pvals[:n_samples]

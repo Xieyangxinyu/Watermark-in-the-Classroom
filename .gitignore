@@ -20,7 +20,6 @@ old/
 worker*
 data/ETS_corpus_sampled.jsonl
 data/LOCNESS_sampled.jsonl
-results.jsonl
 myenv/
 figs/
 tables/
