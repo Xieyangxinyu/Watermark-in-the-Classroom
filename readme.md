@@ -53,7 +53,8 @@ You can reproduce the results of the paper by the following steps:
 </details>
 
 Here is an example:
-```cmd
+
+```bash
 python polish.py \
         --model_name phi \
         --prompt_path data/ETS_corpus_sampled.jsonl \
@@ -83,7 +84,8 @@ This script will produce `results.jsonl` in the specified output directory, whic
 
 </details>
 Here is an example:
-```cmd
+
+```bash
 python get_scores.py \
         --tokenizer phi \
         --method_detect openai \
@@ -116,7 +118,8 @@ The [`similarity.py`](./similarity.py) script can be used to compute the similar
 </details>
 
 Here is an example:
-```cmd
+
+```bash
 python similarity.py \
         --input_dir data/ \
         --input_filename ETS_corpus_sampled.jsonl \
@@ -144,6 +147,7 @@ The [`detection_results.py`](./detection_results.py) script runs hypothesis test
 </details>
 
 Here is an example:
+
 ```bash
 python detection_results.py \
         --tokenizer phi \

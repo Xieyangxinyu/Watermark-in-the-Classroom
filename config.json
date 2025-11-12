@@ -1,0 +1,6 @@
+{
+    "data_path": "data",
+    "logs_path": "logs",
+    "results_path": "results",
+    "summaries_path": "summaries"
+}
