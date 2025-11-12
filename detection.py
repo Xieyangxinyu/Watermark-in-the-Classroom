@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.stats import gaussian_kde
+import os
 pd.options.mode.chained_assignment = None
 
 from detection_utils import get_col_name, visualize_p_vals, log100, pretty_name
@@ -323,6 +324,8 @@ class WatermarkInClassroom:
         ax.tick_params(axis='y', labelsize=self.tick_fontsize)
 
         plt.show()
+        if not os.path.exists("figs"):
+            os.makedirs("figs")
         # save the figure
         fig.savefig(
             f"figs/{self.model}_{self.method}_{base_label}_human.png",
